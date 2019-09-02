@@ -1,13 +1,20 @@
 import React,{Component} from 'react';
 import './App.css';
-import Header from './components/Header/Header'
+
+import Register from './views/register/register'
+import FooterTab from './components/FooterTab/FooterTab'
 
 class App extends Component{
   render(){
     return(
       <div>
-        <Header></Header>
-        hello
+        
+        {/* <Register></Register> */}
+        {
+          this.props.children
+        }
+        <FooterTab></FooterTab>
+
       </div>
     )
   }
