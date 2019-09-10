@@ -1,0 +1,15 @@
+label{
+  display: block;
+}
+.form{
+  width:200px;
+}
+.demoTitle:before,
+.demoTitle:after {
+  border-bottom: none;
+}
+.fromerror{
+  color:red;
+  padding:1rem 0 0 1rem;
+
+}

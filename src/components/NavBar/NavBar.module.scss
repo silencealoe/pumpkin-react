@@ -1,0 +1,21 @@
+.commonHeader{
+  width:100%;
+  height:2.6rem;
+  line-height: 2.6rem;
+  background: pink;
+}
+.headerlist{
+  display: flex
+}
+.headerlist li{
+  flex: 1;
+  font-size: 1rem;
+  font-weight: bold;
+}
+.headerlist li:first-child{
+  text-align: left;
+}
+.headerlist li:last-child{
+  text-align:right;
+  padding-right: .6rem;
+}
