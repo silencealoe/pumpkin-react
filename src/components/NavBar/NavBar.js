@@ -23,7 +23,6 @@ class MyNavBar extends Component{
     </div>
   }
   handleClick(){
-    console.log(this.props)
     this.props.action ==='sign in' ? this.props.history.push('/member/login'):this.props.history.push('/member/register')
   }
 }

@@ -1,4 +1,4 @@
-import {BrowserRouter as Router,Route,Switch} from 'react-router-dom'
+import {BrowserRouter as Router,Route,Switch,Redirect} from 'react-router-dom'
 import React from 'react'
 import App from '../App'
 import Register from '../views/member/register/register'
@@ -11,10 +11,9 @@ var router = (
     <App>
       <Switch>
         <Route path="/" component={Index} exact></Route>
-        <Route path="/member" component={Member}>
-          <Route path="/member/register" component={Register}></Route>
-          <Route path="/member/login" component={Login}></Route>
-        </Route>
+        <Route path="/member" component={Member} exact ></Route>
+        <Route path="/member/register" component={Register}></Route>
+        <Route path="/member/login" component={Login}></Route>
       </Switch>
     </App>
   </Router>

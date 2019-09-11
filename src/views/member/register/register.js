@@ -17,7 +17,8 @@ class Register extends Component{
       spaceShow:false,
       spacechar:'',
       confirmErr:false,
-      loading:false
+      loading:false,
+      isRegister:false
     }
   }
   render(){
@@ -61,7 +62,11 @@ class Register extends Component{
       }
       {
         this.state.confirmErr?
-        <p className={my.fromerror}>！确认密码错误</p> : ''
+        <p className={my.fromerror}>
+          {
+            this.state.isRegister? <span>该邮箱已被注册</span> : <span>！确认密码错误</span>
+          }
+        </p> : ''
       }
         <Button type="primary" style={{width:'70%',margin:'1rem auto',background:'pink'}} onClick={this.handleClick.bind(this)}>confirm</Button>
       {
@@ -72,11 +77,24 @@ class Register extends Component{
   }
   handleEmail(){
     console.log(this.refs.email.state.value)
-    axios.get('/users/register').then(res=>{
+    axios.get('/users/register',{
+      params:{
+        email:this.refs.email.state.value
+      }
+    }).then(res=>{
       console.log(res.data)
+      if(!res.data.ok){
+        this.setState({
+          confirmErr:true,
+          isRegister:true
+        })
+      }
     })
   }
   handleClick(){
+    if(this.state.isRegister){
+      return;
+     }
     this.setState({
       errorShow:false,
       spaceShow:false,
@@ -143,7 +161,8 @@ class Register extends Component{
     }
     if(!(ps===confirmps)){
       this.setState({
-        confirmErr:true
+        confirmErr:true,
+        isRegister:false
       })
       return 
     }

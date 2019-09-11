@@ -14,22 +14,22 @@ class FooterTab extends Component {
     return <div>
         <ul className={footer.footerbar}>
           <li>
-            <NavLink  activeClassName={footer.active} to="/c" replace>
+            <NavLink  activeClassName={footer.active} to="/" exact>
               life
             </NavLink>
           </li>
          <li>
-         <NavLink  activeClassName={footer.active} to="/b" replace>
+         <NavLink  activeClassName={footer.active} to="/b" exact>
             koubei
           </NavLink>   
         </li>  
         <li>
-        <NavLink  activeClassName={footer.active} to="/a" replace>
+        <NavLink  activeClassName={footer.active} to="/a" exact>
             friends
           </NavLink>
         </li>
         <li>
-          <NavLink  activeClassName={footer.active} to="/member" replace>
+          <NavLink  activeClassName={footer.active} to="/member" exact>
             my
           </NavLink>
           </li>
