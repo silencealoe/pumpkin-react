@@ -11,3 +11,38 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+.bossbtn{
+  margin-top:10px;
+}
+/* .show{
+  opacity:1;
+  transition: opacity 2s ease-in;
+}
+.hide{
+  opacity:0;
+  transition: opacity 2s ease-in;
+} */
+.boss{
+  position: absolute;
+  left:-100px;
+}
+.boss-text-enter{
+  left:-100px;
+}
+.boss-text-enter-active{
+  left:100px;
+  transition: left 2s
+}
+.boss-text-enter-done{
+  left:100px
+}
+.boss-text-exit{
+  left:100px;
+}
+.boss-text-exit-active{
+ left:-100px;
+ transition: left 2s
+}
+.boss-text-exit-done{
+  left:-100px
+}

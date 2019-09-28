@@ -1,5 +1,5 @@
 import React,{Component} from 'react'
-import NavBar from '../../../components/NavBar/NavBar'
+// import NavBar from '../../../components/NavBar/NavBar'
 import { List, InputItem,Button,Checkbox} from 'antd-mobile';
 import axios from 'axios'
 import md5 from 'js-md5'
@@ -13,11 +13,11 @@ class Login extends Component{
     super(props)
     this.state={
       checkKey:1,
-      error:false
+      error:false,
+      num:0
     }
   }
   handleCheck(){
-    console.log(this)
     this.state.checkKey===0?this.setState({checkKey:1}):this.setState({checkKey:0})
     console.log(this.state.checkKey)
   }
@@ -31,10 +31,20 @@ class Login extends Component{
       re.data.ok ? this.props.history.push('/') : this.setState({error:true})
     })
   }
+  fn(val){
+    console.log('sdsfg')
+   this.setState({
+     num:val
+   })
+  }
   render(){
-    return <div>
-      <NavBar title="login" action="sign up"></NavBar>
-      <div className="form" style={{marginTop:'2rem'}}>
+    return <div className={login.loginArea}>
+      <div className={login.loginMask}>
+        
+      </div>
+      {/* <NavBar title="login" action="sign up" pfn={this.fn.bind(this)}></NavBar> */}
+      {/* <p>number is {this.state.num}</p>
+      <div className="form">
         {
           this.state.error ? <p className={login.notice}>！用户名和密码不匹配，请重新输入</p> : ''
         }
@@ -53,7 +63,7 @@ class Login extends Component{
         </List>
         <AgreeItem  onChange={this.handleCheck.bind(this)}>Remember it</AgreeItem>
         <Button type="primary" style={{width:'70%',margin:'1rem auto',background:'pink'}} onClick={this.handleLogin.bind(this)}>Login</Button>
-      </div>
+      </div> */}
     </div>
   }
 }

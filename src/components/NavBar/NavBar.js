@@ -14,13 +14,20 @@ class MyNavBar extends Component{
   render(){
     return <div className={navBar.commonHeader}>
       <ul className={navBar.headerlist}>
-          <li>
+          <li onClick={this.handleBack.bind(this)}>
             <Icon type="left" style={{marginTop:'.3rem',color:'black'}} size="lg"></Icon>
           </li>
           <li>{this.props.title}</li>
+          {/* <li onClick={this.handleVal.bind(this,3)}>{this.props.title}</li> */}
           <li onClick={this.handleClick.bind(this)}>{this.props.action}</li>
       </ul>
     </div>
+  }
+  // handleVal(num){
+  //   this.props.pfn(num)
+  // }
+  handleBack(){
+    this.props.history.goBack()
   }
   handleClick(){
     this.props.action ==='sign in' ? this.props.history.push('/member/login'):this.props.history.push('/member/register')

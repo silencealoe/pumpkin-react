@@ -76,6 +76,10 @@ class Register extends Component{
     </div>
   }
   handleEmail(){
+    this.setState({
+        confirmErr:false,
+        isRegister:false
+    })
     console.log(this.refs.email.state.value)
     axios.get('/users/register',{
       params:{
@@ -83,12 +87,7 @@ class Register extends Component{
       }
     }).then(res=>{
       console.log(res.data)
-      if(!res.data.ok){
-        this.setState({
-          confirmErr:true,
-          isRegister:true
-        })
-      }
+      if(!res.data.ok) this.setState({confirmErr:true,isRegister:true})
     })
   }
   handleClick(){
