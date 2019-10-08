@@ -32,7 +32,7 @@ class ListItem extends Component {
 }
 ListItem.propTypes={
   name:PropTypes.string.isRequired,
-  content:PropTypes.string,
+  // content:PropTypes.string,
   index:PropTypes.number
 }
  
