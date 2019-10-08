@@ -1,6 +1,6 @@
 import React,{Component} from 'react';
 import {NavLink} from 'react-router-dom';
-import 'antd-mobile/dist/antd-mobile.css';
+// import 'antd-mobile/dist/antd-mobile.css';
 import footer from './FooterTab.module.scss'
 
 class FooterTab extends Component {

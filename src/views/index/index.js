@@ -13,7 +13,7 @@ class Index extends Component{
       inputVal:'',
       username:'',
       addlist:[],
-      addlist2:[],
+      addlist2:[111,222],
       isShow:false
     }
   }
