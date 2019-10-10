@@ -18,7 +18,6 @@ class MyNavBar extends Component{
             <Icon type="left" style={{marginTop:'.3rem',color:'black'}} size="lg"></Icon>
           </li>
           <li>{this.props.title}</li>
-          {/* <li onClick={this.handleVal.bind(this,3)}>{this.props.title}</li> */}
           <li onClick={this.handleClick.bind(this)}>{this.props.action}</li>
       </ul>
     </div>

@@ -1,7 +1,8 @@
-import {CHANGE_INPUT,ADD_ITEM,DELETE_ITEM} from './actionTypes'
+import {CHANGE_INPUT,ADD_ITEM,DELETE_ITEM,FOOTER_SHOW,GETLIST} from './actionTypes'
 const defaultdata={
   inputval:'',
-  datalist:['你的假期已经结束','上班第一天，好疲倦','发现之前学的都忘记了哟']
+  datalist:['你的假期已经结束','上班第一天，好疲倦','发现之前学的都忘记了哟'],
+  footerShow:true
 }
 
 //纯函数：传入什么参数，就返回这个参数，不依赖外部任何状态和数据的变化，函数内部没有与外部的交互，必须只依赖传入的参数
@@ -23,7 +24,17 @@ export default ((state = defaultdata,action)=>{
     let newState=JSON.parse(JSON.stringify(state))
     newState.datalist.splice(action.index,1)
     return newState
+  }
+  if(action.type === FOOTER_SHOW){
+    let newState=JSON.parse(JSON.stringify(state))
+    newState.footerShow = action.footerShow
+    return newState
+  }
 
+  if(action.type === GETLIST){
+    let newState=JSON.parse(JSON.stringify(state))
+    newState.datalist=action.list
+    return newState
   }
   return state
 }) 

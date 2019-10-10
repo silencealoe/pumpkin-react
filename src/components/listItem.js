@@ -8,23 +8,23 @@ class ListItem extends Component {
   //????????dom????????
   //?????????
   componentWillReceiveProps(){
-    console.log('componentWillReceiveProps(){')
+    // console.log('componentWillReceiveProps(){')
 
   }
   shouldComponentUpdate(Props,nextState){ //????
-    console.log(Props)
+    // console.log(Props)
     
     return Props.content!== this.props.content? true :false
   }
   componentWillUnmount(){
-    console.log('componentWillUnmount()')
+    // console.log('componentWillUnmount()')
   }
   handleClick(){
     console.log(this.props.index)
-    this.props.deleteItem(this.props.index)
+    this.props.deleteItem(this.props.index,1)
   }
   render() { 
-    console.log('childs')
+    // console.log('childs')
     return (
       <div onClick={this.handleClick.bind(this)}>{this.props.name}--{this.props.content}</div>
     );

@@ -24,7 +24,7 @@ class FooterTab extends Component {
           </NavLink>   
         </li>  
         <li>
-        <NavLink  activeClassName={footer.active} to="/a" exact>
+        <NavLink  activeClassName={footer.active} to="/friends" exact>
             friends
           </NavLink>
         </li>

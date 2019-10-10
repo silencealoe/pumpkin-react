@@ -1,12 +1,14 @@
 import React,{Component} from 'react'
 // import NavBar from '../../../components/NavBar/NavBar'
-import { List, InputItem,Button,Checkbox} from 'antd-mobile';
+// import { List, InputItem,Button,Checkbox} from 'antd-mobile';
 import axios from 'axios'
 import md5 from 'js-md5'
 import {withRouter} from 'react-router-dom'
 import login from './login.module.scss'
+import store from '../../../store/index'
+import {footerShowAction} from '../../../store/actionCreator'
 
-const AgreeItem = Checkbox.AgreeItem
+// const AgreeItem = Checkbox.AgreeItem
 
 class Login extends Component{
   constructor(props){
@@ -37,10 +39,20 @@ class Login extends Component{
      num:val
    })
   }
+  componentDidMount(){
+     const footerAction =footerShowAction(false)
+     store.dispatch(footerAction)
+    
+  }
+  componentWillUnmount(){
+    const footerAction = footerShowAction(true)
+    store.dispatch(footerAction)
+
+  }
   render(){
     return <div className={login.loginArea}>
       <div className={login.loginMask}>
-        
+        <h2>登录</h2>
       </div>
       {/* <NavBar title="login" action="sign up" pfn={this.fn.bind(this)}></NavBar> */}
       {/* <p>number is {this.state.num}</p>

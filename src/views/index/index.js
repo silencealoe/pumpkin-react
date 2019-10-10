@@ -22,14 +22,14 @@ class Index extends Component{
      addlist2:[...this.state.addlist2,this.state.inputVal],
      inputVal:''
    },()=>{  //在虚拟dom执行完成之后执行
-     console.log(this.p1.querySelectorAll('div').length)
+    //  console.log(this.p1.querySelectorAll('div').length)
    })
 
 
  }
  
  componentDidMount(){
-   console.log('挂载完成')
+  //  console.log('挂载完成')
    axios.get('http://rap2api.taobao.org/app/mock/232506/huitest',{
      params:{
        userid:100001
@@ -44,22 +44,22 @@ class Index extends Component{
    
  }
  shouldComponentUpdate(){
-  console.log('shouldcomponntupdate')
+  // console.log('shouldcomponntupdate')
   return true
 }
 componentWillUpdate(){
-  console.log('组件将要更新')
+  // console.log('组件将要更新')
 }
 componentDidUpdate(){
-  console.log('组件更新完成')
+  // console.log('组件更新完成')
 }
  handleChange(e){
    this.setState({   //异步完成，虚拟dom渲染需要一定的时间
      inputVal:this.input1.value
    })
  }
- deleteItem(index){
-   console.log(index)
+ deleteItem(index,num){
+   console.log('del',index,num)
    let list = this.state.addlist2
    list.splice(index,1)
    this.setState({
@@ -74,7 +74,7 @@ componentDidUpdate(){
    })
  }
   render(){
-    console.log('挂载中')
+    // console.log('挂载中')
     return( <Fragment>
       <NavBar title="index"></NavBar>
     <h2>welcome--{this.state.username}</h2>
@@ -96,7 +96,7 @@ componentDidUpdate(){
       <div ref={(p)=>{this.p1=p}}>
       {
        this.state.addlist2.map((item,index)=>(
-         <ListItem content={item} key={item+index} index={index} deleteItem={this.deleteItem.bind(this,index)}></ListItem>
+         <ListItem content={item} key={item+index} index={index} deleteItem={this.deleteItem.bind(this)}></ListItem>
 
        )
        ) 
