@@ -36,5 +36,10 @@ export default ((state = defaultdata,action)=>{
     newState.datalist=action.list
     return newState
   }
+  // if(action.type === GET_SAGA_LIST){
+  //   let newState=JSON.parse(JSON.stringify(state))
+  //   newState.datalist=action.list
+  //   return newState
+  // }
   return state
 }) 

@@ -1,9 +1,10 @@
 import React,{Component} from 'react'
 import store from '../../store/index'
 import {changeInputAction,addItemAction,deleteItemAction,getTodoList} from '../../store/actionCreator'
+// import {changeInputAction,addItemAction,deleteItemAction,getSagaTodoListAction} from '../../store/actionCreator'
 import  TodolistUI from './TodolistUI'
 import NavBar from '../../components/NavBar/NavBar'
-import axios from 'axios'
+// import axios from 'axios'
 
 class Member extends Component{
   constructor(props){
@@ -37,9 +38,13 @@ class Member extends Component{
     store.dispatch(delAction)
   }
   componentDidMount(){
-    // const action = getTodoList()
-    // store.dispatch(action)
+    const action = getTodoList()
+    store.dispatch(action)
   }
+  // componentDidMount(){
+  //   const action = getSagaTodoListAction()
+  //   store.dispatch(action)
+  // }
   render(){
     // console.log('组件挂载中')
     return <div>

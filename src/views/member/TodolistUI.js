@@ -27,7 +27,6 @@ import 'antd/dist/antd.css'
 class TodolistUI extends Component {
   constructor(props) {
     super(props);
-    console.log(this.props.datalist)
     this.state = {
     }
   }
